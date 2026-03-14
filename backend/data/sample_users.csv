@@ -1,0 +1,4 @@
+email,firstName,lastName,company,position,country,interests,bio,phone,linkedin,password,role
+admin@community.day,Admin,User,Fiscal Solutions,Event Organizer,Serbia,fiscalization;pos;retail,Community Day organizer.,+381611234567,,community2026,admin
+marko@example.com,Marko,Petrovic,RetailTech d.o.o.,CTO,Serbia,pos;cloud;api;retail,Building next-gen POS solutions.,,,,
+anna@example.com,Anna,Mueller,FiscalDE GmbH,Compliance Manager,Germany,fiscalization;compliance;regulation,EU fiscal compliance specialist.,,,,

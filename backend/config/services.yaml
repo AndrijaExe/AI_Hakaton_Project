@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Model/*/ValueObject/'
+            - '../src/Kernel.php'
+
+    App\Adapter\In\Http\Controller\:
+        resource: '../src/Adapter/In/Http/Controller/'
+        tags: ['controller.service_arguments']

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 24px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #1a365d; font-size: 20px; margin-bottom: 16px; }
+        .content { margin: 16px 0; }
+        .footer { font-size: 12px; color: #718096; margin-top: 24px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Community Day – Event Reminder</h1>
+        <p>Dear participant,</p>
+        <div class="content">
+            {{ messageHtml|raw }}
+        </div>
+        <p class="footer">Community Day – Enjoy the event!</p>
+    </div>
+</body>
+</html>
