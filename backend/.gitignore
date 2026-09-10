@@ -1,6 +1,9 @@
 /vendor/
 /var/
 /.env
+/.env.dev
+/.env.test
+/.env.prod
 /.env.local
 /config/jwt/*.pem
 
@@ -8,6 +11,8 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/.env.*
+!/.env.example
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
