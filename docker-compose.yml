@@ -2,9 +2,9 @@ services:
   db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_DB: community_day
-      POSTGRES_USER: app
-      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: ${POSTGRES_DB:-community_day}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
     ports:
       - "5432:5432"
     volumes:
@@ -22,14 +22,14 @@ services:
       - db
       - mailpit
     environment:
-      DATABASE_URL: "postgresql://app:secret@db:5432/community_day?serverVersion=15&charset=utf8"
-      APP_ENV: dev
-      APP_SECRET: hakaton2026secretkey
+      DATABASE_URL: ${DATABASE_URL:-postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD:-change_me}@db:5432/${POSTGRES_DB:-community_day}?serverVersion=15&charset=utf8}
+      APP_ENV: ${APP_ENV:-dev}
+      APP_SECRET: ${APP_SECRET:-change_this_app_secret}
       JWT_SECRET_KEY: "%kernel.project_dir%/config/jwt/private.pem"
       JWT_PUBLIC_KEY: "%kernel.project_dir%/config/jwt/public.pem"
-      JWT_PASSPHRASE: "community_day_jwt"
-      CORS_ALLOW_ORIGIN: "http://localhost:5173"
-      MAILER_DSN: "smtp://mailpit:1025"
+      JWT_PASSPHRASE: ${JWT_PASSPHRASE:-change_this_jwt_passphrase}
+      CORS_ALLOW_ORIGIN: ${CORS_ALLOW_ORIGIN:-http://localhost:5173}
+      MAILER_DSN: ${MAILER_DSN:-smtp://mailpit:1025}
 
   mailpit:
     image: axllent/mailpit
